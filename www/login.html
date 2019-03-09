@@ -121,9 +121,10 @@
           function loginClient(){
             name=$("#name").val();
             pass=$("#pass").val();
-            $.post("loginClient.php",{name:name,  pass:pass}).done(function(data){
+            $.post("https://myweb-tools.info/cnd/mobileLogin.php",{username:name,  password:pass}).done(function(data){
               if(data=="true"){
-                window.top.location="/client-area";
+                //window.top.location="/client-area";
+                alert("true");
                 
               }else{
                 alert("Wrong Password");
