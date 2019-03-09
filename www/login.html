@@ -121,14 +121,13 @@
           function loginClient(){
             name=$("#name").val();
             pass=$("#pass").val();
-            alert("here");
             $.post("https://myweb-tools.info/cdn/mobileLogin.php",{username:name,  password:pass}).done(function(data){
-              if(data=="true"){
-                //window.top.location="/client-area";
-                alert("true");
-                
+            	obj=$.parseJSON(data);
+            	response=obj.response;
+              if(response=="true"){
+                window.top.location="blank.html";
               }else{
-                alert("Wrong Password");
+                alert("Wrong Password" );
               }
             });
           }
