@@ -31,6 +31,21 @@
         @font-face {  font-family: 's1';src: url('r/font/1.ttf'); }
 
     </style>
+    <script type="text/javascript">
+        
+   var sound = device.platform == 'Android' ? 'file://r/sound.mp3' : 'file://beep.caf';
+var date = new Date();
+
+cordova.plugins.notification.local.schedule({
+    id: 1,
+    title: "Notification",
+    message: "Any Text",
+    at: date,
+    sound: sound,
+    icon: "icon.png"
+});
+
+    </script>
   </head>
 
     <body style="background-color:white; overflow: hidden;">      
